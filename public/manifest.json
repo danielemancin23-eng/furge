@@ -1,0 +1,15 @@
+{
+  "name": "Furge",
+  "short_name": "Furge",
+  "description": "Agente IA personale e privato",
+  "lang": "it",
+  "start_url": "/chat",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0a0b0d",
+  "theme_color": "#0a0b0d",
+  "icons": [
+    { "src": "/furge-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
