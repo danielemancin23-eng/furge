@@ -37,11 +37,14 @@ export function AuthProvider({ children }) {
     if ((data.user?.email || "").toLowerCase() !== OWNER_EMAIL) { await client.auth.signOut(); throw new Error("Accesso riservato al proprietario"); }
     return data;
   }, []);
+
   const signOut = useCallback(async () => { await client?.auth.signOut(); }, []);
+
   const resetPassword = useCallback(async (email) => {
     const { error } = await client.auth.resetPasswordForEmail(email.trim().toLowerCase(), { redirectTo: `${window.location.origin}/login?reset=1` });
     if (error) throw new Error(error.message);
   }, []);
+
   const getToken = useCallback(async () => (await client.auth.getSession()).data.session?.access_token, []);
 
   return (
